@@ -163,6 +163,7 @@ public class StationManager {
 
     public void enterAKeyToContinue() {
         String input = null;
+        System.out.println("Enter some character to continue.");
         while (input == null) {
             input = inputReader.nextLine();
         }
