@@ -5,4 +5,5 @@ public interface Heap<T> {
     T pop();
     void push(T element);
     String graphViz();
+    String toString();
 }

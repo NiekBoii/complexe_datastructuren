@@ -28,6 +28,6 @@ public class LinearSeachTests {
 
     @Test
     public void testIfElementNotInListReturnsNull(){
-        assertThrows(IllegalArgumentException.class, () -> LinearSearch.search(Arrays.stream(smallStringArray).iterator(), "a"));
+        assertNull(LinearSearch.search(Arrays.stream(smallStringArray).iterator(), "a"));
     }
 }

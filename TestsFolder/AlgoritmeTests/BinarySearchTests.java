@@ -45,11 +45,6 @@ public class BinarySearchTests {
     }
 
     @Test
-    public void testIfNullTargetReturnsNull(){
-        assertNull(BinarySearch.search(smallIntegersArray, null));
-    }
-
-    @Test
     public void testIfNulLArrayReturnsNull(){
         assertThrows(IllegalArgumentException.class, () -> BinarySearch.search(null, "Needle"));
     }

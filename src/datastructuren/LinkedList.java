@@ -308,6 +308,15 @@ public class LinkedList<T extends Comparable<T>> implements List<T>, Iterable<T>
     public int compareTo(LinkedList<T> otherList) {
         return this.equals(otherList) ? 0 : Integer.compare(this.size, otherList.size);
     }
+
+    @Override
+    public String toString(){
+    StringBuilder builder = new StringBuilder();
+      for(T object : this){
+          builder.append(object +"\n");
+      }
+    return builder.toString();
+    }
 }
 
 

@@ -30,7 +30,7 @@ public class AStar <T extends Comparable<T>>{
             for(Edge<T> edge : graph.getEdges(next.getVertice())){
                 if(!visited.contains(edge.getDestination())){
                     double currentCosts = next.gCost;
-                    AStarNode<T> vertice = new AStarNode<>(edge.getDestination(), currentCosts + edge.getWeight());
+                    AStarNode<T> vertice = new AStarNode<>(edge.getDestination(), currentCosts);
 
                     vertice.setCostToGoal(destination);
                     priorityQueue.push(vertice);

@@ -7,4 +7,5 @@ public interface Tree<T> {
     int height();
     String graphViz();
     int size();
+    String toString();
 }
