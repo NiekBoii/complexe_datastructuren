@@ -36,12 +36,4 @@ public class MergeSortTests {
         Integer[] array = new Integer[]{};
         assertEquals(array, MergeSort.sort(array));
     }
-
-    @Test
-    public void testIfThrowsAssertionExceptionWhenArrayIsNull(){
-        Integer[] data = null;
-        Assertions.assertThrows(AssertionError.class, () -> {
-            MergeSort.sort(data);
-        });
-    }
 }

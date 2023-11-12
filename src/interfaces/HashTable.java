@@ -5,4 +5,5 @@ public interface HashTable<K extends Comparable<K>, V extends Comparable<V>> {
     boolean contains(K key);
     V get(K key);
     V remove(K key);
+    String toString();
 }

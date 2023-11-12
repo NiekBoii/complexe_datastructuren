@@ -114,4 +114,6 @@ public interface List<T> {
      * @return the number of elements in this list
      */
     int size();
+
+    String toString();
 }
