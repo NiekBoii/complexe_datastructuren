@@ -61,7 +61,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T>, Iterable<T>
         if(element == null){
             throw new IllegalArgumentException("You cannot pass null as an argument.");
         }
-        LinkedListNode<T> newToBeAdded = new LinkedListNode(tailLinkedListNode, tailLinkedListNode.getNextNode(), element);
+        LinkedListNode<T> newToBeAdded = new LinkedListNode<>(tailLinkedListNode, tailLinkedListNode.getNextNode(), element);
 
         tailLinkedListNode.getNextNode().setPreviousNode(newToBeAdded);
         tailLinkedListNode.setNextNode(newToBeAdded);
@@ -145,12 +145,9 @@ public class LinkedList<T extends Comparable<T>> implements List<T>, Iterable<T>
 
     @Override
     public T get(int index) {
-        if(index + 1 > size){
-            throw new IndexOutOfBoundsException();
-        } else if(index < 0){
+        if(index + 1 > size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
-
         int customIndex = 0;
         for (T object : this) {
             if (customIndex == index) {
@@ -243,6 +240,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T>, Iterable<T>
             if(index == size()-1){
                 T data = headLinkedListNode.getPreviousNode().getData();
                 headLinkedListNode.getPreviousNode().setData(element);
+                return data;
             } else{
                 iterator = iterator();
                 LinkedListNode<T> currentLinkedListNode = tailLinkedListNode;

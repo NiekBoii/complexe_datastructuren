@@ -39,17 +39,17 @@ public class MinHeap<T extends Comparable<T>> implements Heap<T> {
 
 
     public void push(T element){
-        int minHeapLength = minHeap.length;
+        int currentCapacity = minHeap.length;
         if(size == 0){
-            if(minHeapLength == 0){
+            if(currentCapacity == 0){
                 minHeap = (T[]) new Comparable[1];
             }
             minHeap[size++] = element;
-        } else if(minHeapLength - 1 > size){
+        } else if(size < currentCapacity - 1){
             minHeap[size++] = element;
             bubbleUp(size -1);
         } else{
-            minHeap = Arrays.copyOf(minHeap, minHeapLength * 2);
+            minHeap = Arrays.copyOf(minHeap, currentCapacity * 2);
             minHeap[size++] = element;
             bubbleUp(size - 1);
         }
@@ -89,9 +89,9 @@ public class MinHeap<T extends Comparable<T>> implements Heap<T> {
     }
 
     private void swapElements(int firstElement, int secondElement) {
-        T copyOfChild = minHeap[firstElement];
+        T elementCopy = minHeap[firstElement];
         minHeap[firstElement] = minHeap[secondElement];
-        minHeap[secondElement] = copyOfChild;
+        minHeap[secondElement] = elementCopy;
     }
 
     public T peek() {

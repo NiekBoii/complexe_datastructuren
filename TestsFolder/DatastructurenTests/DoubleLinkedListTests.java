@@ -39,7 +39,8 @@ public class DoubleLinkedListTests {
     public void testIfChangingElementValueWorks(){
         Integer integer = 5;
         integerLinkedList.add(integer);
-        integerLinkedList.set(0, 10);
+        Integer oldValue = integerLinkedList.set(0, 10);
+        assertEquals(5, oldValue);
         assertEquals(10, integerLinkedList.get(0));
     }
 

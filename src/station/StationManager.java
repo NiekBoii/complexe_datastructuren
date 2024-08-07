@@ -10,10 +10,6 @@ import java.util.Scanner;
 public class StationManager {
     private LinkedList<Station> stations;
     private LinkedList<Track> tracks;
-
-    private SeperateChainingHashTable<String, LinkedList<Double>> binarySearchDurations;
-    private SeperateChainingHashTable<String, LinkedList<Double>> linearSearchDurations;
-
     private SeperateChainingHashTable<String, Station> stationsMap;
     private Graph<Station> stationsGraph;
     private AvlTree<Station> stationsTree;
@@ -56,10 +52,6 @@ public class StationManager {
     public StationManager(LinkedList<Station> stations, LinkedList<Track> tracks) {
         this.stations = stations;
         this.tracks = tracks;
-
-        binarySearchDurations = new SeperateChainingHashTable<>(100);
-        linearSearchDurations = new SeperateChainingHashTable<>(100);
-
         stationsMap = new SeperateChainingHashTable<>(stations.size());
         stationsGraph = new Graph<>();
         stationsTree = new AvlTree<>();

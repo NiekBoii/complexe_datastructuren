@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public class LinkedListIterator<T> implements Iterator<T> {
     private LinkedListNode<T> currentLinkedListNode;
-    private LinkedListNode<T> headLinkedListNode;
+    private final LinkedListNode<T> headLinkedListNode;
 
     public LinkedListIterator(LinkedListNode<T> tailLinkedListNode, LinkedListNode<T> headLinkedListNode){
         this.currentLinkedListNode = tailLinkedListNode;

@@ -2,7 +2,6 @@ package algoritmes;
 
 import datastructuren.*;
 import interfaces.MCSTBoundChecker;
-import interfaces.MinimumCostSpannable;
 
 public class Prim<T extends Comparable<T>> {
 
